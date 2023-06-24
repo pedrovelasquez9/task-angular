@@ -5,16 +5,21 @@ const routes: Routes = [
 	{
 		path: "login",
 		loadChildren: () =>
-			import("./modules/auth/auth-routing.module").then(
-				(mod) => mod.AuthRoutingModule
+			import("./modules/auth/auth.module").then(
+				(mod) => mod.AuthModule
+			),
+	},
+	{
+		path: "tasks",
+		loadChildren: () =>
+			import("./modules/tasks/tasks.module").then(
+				(mod) => mod.TasksModule
 			),
 	},
 	{
 		path: "",
-		loadChildren: () =>
-			import("./modules/tasks/tasks-routing.module").then(
-				(mod) => mod.TasksRoutingModule
-			),
+		redirectTo: "tasks",
+		pathMatch: "full",
 	},
 ];
 

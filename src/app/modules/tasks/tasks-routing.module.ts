@@ -4,13 +4,8 @@ import { TasksComponent } from "./page/tasks.component";
 
 const routes: Routes = [
 	{
-		path: "tasks",
-		component: TasksComponent,
-	},
-	{
 		path: "",
-		redirectTo: "tasks",
-		pathMatch: "full",
+		component: TasksComponent,
 	},
 ];
 
